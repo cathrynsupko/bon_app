@@ -7,4 +7,17 @@
     <% end %>
   </ol>
   <p><%= @post.directions %></p>
+  
+  <%= render partial:'review_form', locals: { review: @review, post: @post } %>
+  
+  <% @post.reviews.each do |review| %>
+    <p> Rating: <%=review.rating %> </p>
+    <% if current_user == review.review_author %>
+      <p> 
+        <%= link_to "delete review", post_review_path(@post, review), method: :delete %> 
+        | <%= link_to "edit review", edit_post_review_path(@post, review) %>
+      </p>
+    <% end %>
+    <p> <%= review.review_author.email %>: <%= review.content %></p>
+  <% end %>
 </div>

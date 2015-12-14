@@ -1,0 +1,8 @@
+<%= form_for @review, url: post_review_path(@post, @review) do |f| %>
+    <% 5.times do |n| %>
+      <%= f.label n+1 %>
+      <%= f.radio_button(:rating, n+1) %><br>
+    <% end %>
+    <%= f.text_area :content %>
+    <%= f.submit "POST" %>
+<% end %>
