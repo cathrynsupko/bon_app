@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151214203241) do
+ActiveRecord::Schema.define(version: 20151214211301) do
 
   create_table "favorites", force: :cascade do |t|
     t.integer  "favorited_post_id"
     t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "favoriting_user_id"
   end
 
   create_table "followings", force: :cascade do |t|

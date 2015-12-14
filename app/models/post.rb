@@ -1,5 +1,10 @@
 class Post < ActiveRecord::Base
   belongs_to :author, class_name: "User"
+  has_many :reviews, foreign_key: "reviewed_post_id"
+  
+  has_many :favorites, foreign_key: "favorited_post_id"
+  has_many :favoriting_users, through: :favorites, source: :favoriting_user
+  
   has_many :ingredients
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
   
