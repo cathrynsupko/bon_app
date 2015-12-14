@@ -5,6 +5,9 @@ class Post < ActiveRecord::Base
   has_many :favorites, foreign_key: "favorited_post_id"
   has_many :favoriting_users, through: :favorites, source: :favoriting_user
   
+  has_many :taggings, foreign_key: "tagged_post_id"
+  has_many :tags, through: :taggings, source: :tag
+  
   has_many :ingredients
   accepts_nested_attributes_for :ingredients, reject_if: :all_blank, allow_destroy: true
   
