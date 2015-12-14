@@ -1,0 +1,29 @@
+<div class="post-form-container">
+  <div class="form-content box">
+    <div class="form-title box">
+      <h2> NEW POST </h2>
+    </div>
+   
+    
+    <%= form_for @post, html: { multipart: true } do |f| %>
+      <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h3>Sorry! There was a problem saving your post!</h3>
+        <ul>
+          <% @post.errors.messages.each do |attr, errors| %>
+            <% errors.each do |error| %>
+              <li> <%= attr %> <%= error %> </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+      
+      <%= f.text_field :title, placeholder: "Title" %><br>
+      <%= f.file_field :image %><br>
+      <%= f.label "Directions", class:"space" %><br>
+      <%= f.text_area :directions %><br>
+      <%= f.submit "POST" %>
+    <% end %>
+  </div>
+</div>

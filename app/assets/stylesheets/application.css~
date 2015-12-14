@@ -1,0 +1,114 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body{
+  margin:0;
+  font-family:'Vollkorn';
+  color: #424242;
+}
+
+a{
+  text-decoration: none;
+  color: #1DE9B6;
+}
+
+.box{
+  border: 3px solid #424242;
+}
+
+form{
+  margin-top: 20px;
+  font-family: 'Montserrat';
+  
+}
+
+h1, h2, h3{
+  font-family: 'Montserrat';
+}
+
+input{
+  margin:10px;
+  margin-left: 40px;
+  font-family:'Montserrat';
+  font-size: 14px;
+  padding: 7px;
+  border:0;
+  border-bottom:2px solid #424242;
+  width: 250px;
+}
+
+input:focus{
+  outline:none;
+}
+
+input[type="submit"]{
+  border: 3px solid #1DE9B6;
+  color: #1DE9B6;
+  background-color: #fff;
+  padding:7px;
+  font-size: 16px;
+  margin: 10px;
+  margin-left: 40px;
+  width: 264px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]{
+  width: 20px;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 50px;
+  font-family:'Montserrat';
+}
+
+nav{
+  float:right;
+  margin-right: 20px;
+}
+
+nav li{
+  display:inline;
+  margin-left: 10px;
+}
+
+.form-container{
+  width: 400px;
+  margin:50px auto;
+  font-family: 'Montserrat'
+}
+.form-container p{
+  margin: 40px;
+  margin-top: 15px;
+}
+.form-title{
+  padding-left: 50px;
+  padding-top: 30px;
+  margin-left: -50px;
+  margin-top: -30px;
+  width: 150px;
+}
+
+.form-content{
+  padding-left: 20px;
+}
+
+#error_explanation{
+  color: #FF5252;
+}

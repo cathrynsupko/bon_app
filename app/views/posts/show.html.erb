@@ -1,0 +1,10 @@
+<div class="container">
+  <h2> <%= @post.title %> </h2>
+  <%= image_tag @post.image.url(:large) %>
+  <ol>
+    <% @post.ingredients.each do |i| %>
+      <li><%= i.content %></li>
+    <% end %>
+  </ol>
+  <p><%= @post.directions %></p>
+</div>

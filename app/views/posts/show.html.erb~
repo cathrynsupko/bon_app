@@ -1,0 +1,5 @@
+<div class="container">
+  <h2> <%= @post.title %> </h2>
+  <%= image_tag @post.image.url(:large) %>
+  <p> <%= @post.directions %> </p>
+</div>
